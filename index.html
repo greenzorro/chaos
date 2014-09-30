@@ -1,79 +1,34 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>混沌系统</title>
+<link href="http://greenzorro.github.io/demo/common/css/global.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="http://greenzorro.github.io/demo/common/js/jquery-latest.js"></script>
+<script src="functions.js"></script>
+</head>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Chaos : an chaos experiment">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Chaos</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/greenzorro/chaos">View on GitHub</a>
-
-          <h1 id="project_title">Chaos</h1>
-          <h2 id="project_tagline">an chaos experiment</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/greenzorro/chaos/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/greenzorro/chaos/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Chaos maintained by <a href="https://github.com/greenzorro">greenzorro</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<body>
+<h1 class="title">混沌系统试验品 v1.0</h1>
+<div class="text">
+    <p>工作原理：设定行列数，自动产生随机矩阵，矩阵在各个方向上首尾相连，没有中心。两种颜色的点随机分布，但每种颜色数量相等（要保证点的总数为偶数，才能实现这一点）。通过一次次演化，观察它的最终结果。演化的规则，是每个点各自取周围几层组成方阵，选择其中数量较多的颜色，作为演化后的结果。（例如关联层数设为2，就会取每个点周围两层构成一个5×5的方阵，这25个点里哪种颜色更多，就是方阵中心点演化后的颜色。）所有点的演化同时发生，没有先后顺序。</p>
+</div>
+<div class="form">
+    <span>行数：</span>
+    <input id="row" type="number" />
+    <span>列数：</span>
+    <input id="column" type="number" />
+    <span>关联层数：</span>
+    <input id="relative" type="number" />
+</div>
+<div class="matrix"></div>
+<div class="buttons">
+    <a class="auto" href="javascript:;">随机演化</a>
+    <a class="manual" href="javascript:;">手动演化</a>
+    <a class="reset" href="javascript:;">重新生成</a>
+</div>
+<p class="copyright">designed and coded by <a href="http://colachan.com/" target="blank">可乐橙</a></p>
+</body>
 </html>
