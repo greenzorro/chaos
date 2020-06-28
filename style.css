@@ -10,7 +10,7 @@ body { font-family: 'microsoft yahei','stheiti',sans-serif; color: #333; font-si
     -webkit-animation:fadein 1s;
     -moz-animation:fadein 1s;
 }
-.matrix span.color0 { background: #00CACA; }
+.matrix span.color0 { background: #31b5bd; }
 .matrix span.color1 { background: #AD5A5A; }
 .form { margin: 20px 0 0; text-align: center; }
 .form span,
@@ -18,11 +18,11 @@ body { font-family: 'microsoft yahei','stheiti',sans-serif; color: #333; font-si
 .form input { width: 50px; padding: 5px; margin: 0 10px 0 0; border: 1px solid #eee; background: #fff; border-radius: 5px; }
 .buttons { margin: 20px 0 0; text-align: center; }
 .buttons a { display: inline-block; height: 30px; line-height: 30px; padding: 0 20px; margin: 0 5px; background: #fff; border: 1px solid #eee; border-radius: 5px; color: #777; font-size: 12px; }
-.buttons a:hover { border-color: #dfdfdf; color: #AD5A5A; }
+.buttons a:hover { border-color: #dfdfdf; color: #31b5bd; }
 .copyright { margin: 50px 0 50px; padding: 20px 0 0; border-top: 1px solid #eee; text-align: center; color: #aaa; }
 
 /*animations*/
-a { color: #AD5A5A;
+a { color: #31b5bd;
     transition:all .7s;
     -moz-transition:all .7s;
     -webkit-transition:all .7s;
