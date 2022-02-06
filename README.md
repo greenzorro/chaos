@@ -1,6 +1,6 @@
 chaos
 =====
 
-an chaos experiment
+A chaos experiment
 
 http://greenzorro.github.io/chaos/
