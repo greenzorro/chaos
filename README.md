@@ -7,4 +7,4 @@ http://greenzorro.github.io/chaos/
 
 ---
 
-Created by [Victor_42](https://victor42.work/)
+Created by [Victor42](https://victor42.work/)
